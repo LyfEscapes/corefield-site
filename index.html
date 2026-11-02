@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>CoreField · The field app for the trades</title>
+<meta name="description" content="Pin readings right on your photos and let AI draft the report. CoreField is the field app for mold pros, home inspectors, contractors, plumbers, electricians, landscapers and irrigation pros.">
+<meta property="og:title" content="CoreField · The field app for the trades">
+<meta property="og:description" content="Pin readings on your photos. AI drafts the report. You review and send. Get early access.">
+<meta property="og:image" content="https://corefield.lyfescapes.net/media/og.jpg">
+<meta property="og:url" content="https://corefield.lyfescapes.net/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#03050B">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--a1:#8FE1FF;--a2:#4A9BFF;--a3:#2F7BFF;--g:28,92,230;--gl:140,190,255;--on:#fff;--bg:#03050B;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.09);--txt:#EAF2FF;--mut:#9DB0CF}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20% -20% auto;height:90vh;background:radial-gradient(closest-side,rgba(var(--g),.45),rgba(var(--g),.12) 50%,transparent 75%);pointer-events:none;z-index:-1;transition:background .5s}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.grad{background:linear-gradient(90deg,var(--a1),var(--a2) 60%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:800;border-radius:999px;padding:14px 24px;background:linear-gradient(90deg,var(--a3),var(--a2));color:var(--on);box-shadow:0 10px 30px rgba(var(--g),.45);text-decoration:none;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(var(--g),.6)}
+.btn.ghost{background:rgba(255,255,255,.07);color:var(--txt);box-shadow:none;border:1px solid var(--line)}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(var(--g),.16);border:1px solid rgba(var(--gl),.25);font-size:14px;font-weight:600;color:var(--a1)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(3,5,11,.65);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.4px;text-decoration:none}
+.brand .ic{width:36px;height:36px}
+.brand small{font-weight:700;color:#DCE4F2;font-size:20px}
+.nav .btn{padding:10px 18px;font-size:15px}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6.2vw,68px);line-height:1.04;letter-spacing:-2px;font-weight:800;margin:18px 0 18px}
+.hero p.lead{font-size:clamp(17px,2vw,20px);color:var(--mut);max-width:540px}
+.inline-form{display:flex;gap:10px;margin-top:28px;max-width:520px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:6px}
+.inline-form input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:var(--txt);font:inherit;font-size:16px;padding:0 16px}
+.inline-form input::placeholder{color:#7E8FAD}
+.fine{margin-top:12px;font-size:14px;color:var(--mut)}
+.fine b{color:var(--txt)}
+.vidcard{position:relative;justify-self:center;width:min(360px,100%);aspect-ratio:9/16;border-radius:40px;overflow:hidden;background:#000;border:1px solid rgba(var(--gl),.25);box-shadow:0 40px 120px rgba(0,0,0,.6),0 0 120px rgba(var(--g),.35)}
+.vidcard video{width:100%;height:100%;object-fit:cover;display:block}
+.snd{position:absolute;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(3,5,11,.65);backdrop-filter:blur(8px);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* sections */
+section{padding:72px 0}
+.sec-h{text-align:center;max-width:720px;margin:0 auto 40px}
+.sec-h h2{font-size:clamp(32px,4.4vw,48px);line-height:1.08;letter-spacing:-1.4px;font-weight:800;margin:14px 0 12px}
+.sec-h p{color:var(--mut);font-size:18px}
+
+/* trades */
+.chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.chip{display:flex;align-items:center;gap:9px;padding:9px 16px 9px 9px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--txt);font:inherit;font-weight:700;font-size:15px;cursor:pointer;transition:background .2s,border-color .2s}
+.chip .ic{width:30px;height:30px}
+.chip[aria-pressed="true"]{background:rgba(var(--g),.2);border-color:rgba(var(--gl),.55)}
+.panel{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:center;background:linear-gradient(160deg,rgba(var(--g),.18),rgba(255,255,255,.025) 60%);border:1px solid rgba(var(--gl),.22);border-radius:36px;padding:36px}
+.panel .tvid{width:100%;max-width:300px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;justify-self:center;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.panel .tvid img{width:100%;height:100%;object-fit:cover;display:block}
+.panel h3{font-size:clamp(28px,3.4vw,38px);letter-spacing:-1px;line-height:1.1;font-weight:800;display:flex;align-items:center;gap:14px}
+.panel h3 .ic{width:54px;height:54px;flex:none}
+.panel .for{color:var(--mut);font-size:18px;margin:8px 0 22px}
+.blist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.blist li{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:13px 15px;font-weight:600;font-size:15.5px;line-height:1.35}
+.blist li svg{flex:none;margin-top:1px;color:var(--a2)}
+.panel .actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+
+/* steps + features */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step,.feat{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:28px}
+.num{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-weight:800;background:linear-gradient(140deg,var(--a2),var(--a3));color:var(--on);margin-bottom:18px}
+.step h4,.feat h4{font-size:20px;letter-spacing:-.3px;margin-bottom:6px}
+.step p,.feat p{color:var(--mut);font-size:15.5px}
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fic{width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,var(--a2),var(--a3));color:var(--on);margin-bottom:16px}
+
+/* pro */
+.pro{display:flex;gap:30px;align-items:center;background:linear-gradient(160deg,rgba(var(--g),.16),rgba(255,255,255,.02));border:1px solid rgba(var(--gl),.2);border-radius:36px;padding:40px}
+.pro .shield{flex:none;width:96px;height:96px;border-radius:30px;display:flex;align-items:center;justify-content:center;background:linear-gradient(140deg,var(--a2),var(--a3));color:var(--on);box-shadow:0 0 60px rgba(var(--g),.5)}
+.pro h3{font-size:clamp(26px,3vw,34px);letter-spacing:-.8px;line-height:1.15;margin-bottom:8px}
+.pro p{color:var(--mut);font-size:17px}
+
+/* pricing */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:30px;padding:30px;display:flex;flex-direction:column}
+.plan.pop{border-color:rgba(var(--gl),.6);background:linear-gradient(160deg,rgba(var(--g),.22),rgba(255,255,255,.03))}
+.plan .tagp{position:absolute;top:-13px;left:28px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.5px;background:linear-gradient(90deg,var(--a3),var(--a2));color:var(--on)}
+.plan h4{font-size:20px}
+.plan .seats{color:var(--mut);font-size:15px}
+.plan .price{font-size:48px;font-weight:800;letter-spacing:-1.5px;margin:16px 0 4px}
+.plan .price span{font-size:17px;font-weight:600;color:var(--mut);letter-spacing:0}
+.plan ul{list-style:none;margin:16px 0 24px;display:grid;gap:9px;color:#C9D5EA;font-size:15px}
+.plan ul li::before{content:"✓";color:var(--a2);font-weight:800;margin-right:10px}
+.plan .btn{margin-top:auto}
+.pnote{text-align:center;color:var(--mut);margin-top:22px;font-size:15px}
+
+/* signup */
+.signup{background:linear-gradient(160deg,rgba(var(--g),.24),rgba(255,255,255,.03) 65%);border:1px solid rgba(var(--gl),.3);border-radius:40px;padding:44px;display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
+.signup h2{font-size:clamp(32px,4vw,44px);letter-spacing:-1.3px;line-height:1.08}
+.signup p{color:var(--mut);font-size:17px;margin-top:12px}
+form.full{display:grid;gap:12px}
+.field label{display:block;font-size:13px;font-weight:700;color:var(--mut);margin:0 0 6px 6px;letter-spacing:.3px}
+.field input,.field select{width:100%;background:rgba(3,5,11,.55);border:1px solid var(--line);border-radius:18px;color:var(--txt);font:inherit;font-size:16px;padding:14px 16px;outline:0;appearance:none;-webkit-appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%239DB0CF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:48px}
+.field select option{background:#0B1020;color:#EAF2FF}
+.field input:focus,.field select:focus{border-color:rgba(var(--gl),.7);box-shadow:0 0 0 4px rgba(var(--g),.2)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hp{position:absolute;left:-9999px}
+.msg{min-height:22px;font-size:15px;font-weight:600}
+.msg.ok{color:#5BF2B4}.msg.err{color:#FF8D98}
+form.full .btn{width:100%;padding:16px}
+
+footer{padding:40px 0 60px;color:var(--mut);font-size:14px;border-top:1px solid var(--line);margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--txt);text-decoration:none;margin-left:18px}
+
+@media (max-width:900px){
+  .hero .wrap,.panel,.signup{grid-template-columns:1fr}
+  .hero{padding-top:34px}
+  .vidcard{width:min(320px,86%)}
+  .steps,.feats,.prices{grid-template-columns:1fr}
+  .panel{padding:24px;border-radius:30px}
+  .panel .tvid{max-width:240px;order:2}
+  .blist{grid-template-columns:1fr}
+  .pro{flex-direction:column;text-align:center;padding:30px}
+  .signup{padding:28px;border-radius:32px}
+  section{padding:56px 0}
+}
+@media (max-width:520px){
+  .inline-form{flex-direction:column;border-radius:26px;padding:8px}
+  .inline-form input{padding:12px 14px}
+  .row2{grid-template-columns:1fr}
+  .brand small{display:none}
+  .chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;margin:0 -22px 24px;padding:4px 22px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  footer a{margin:0 18px 0 0}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#top"><span class="ic" id="navIcon"></span><span>Core<span class="grad">Field</span></span><small id="navTrade"></small></a>
+  <a class="btn" href="#signup">Get early access</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div>
+    <span class="pill" id="heroPill">The field app for the trades</span>
+    <h1>Pin the readings.<br><span class="grad">AI writes the report.</span></h1>
+    <p class="lead" id="heroLead">CoreField turns your photos, readings and notes into a finished report before you leave the job. You review it and send it.</p>
+    <form class="inline-form" data-form="hero" novalidate>
+      <input type="email" name="email" placeholder="Your work email" autocomplete="email" required aria-label="Email">
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Get early access</button>
+    </form>
+    <div class="msg" data-msg="hero"></div>
+    <p class="fine"><b>14-day free trial</b> at launch · No credit card · Android &amp; web</p>
+  </div>
+  <div class="vidcard">
+    <video id="heroVid" autoplay muted loop playsinline preload="metadata" poster="media/mold.jpg"><source src="media/mold.mp4" type="video/mp4"></video>
+    <button class="snd" id="snd" aria-label="Turn sound on"></button>
+  </div>
+</div></header>
+
+<section id="trades"><div class="wrap">
+  <div class="sec-h"><span class="pill">One app, seven trades</span><h2>Built for <span class="grad">your trade</span></h2><p>Each trade gets its own CoreField app with its own checklists, readings, price book and report format.</p></div>
+  <div class="chips" id="chips" role="group" aria-label="Choose your trade"></div>
+  <div class="panel">
+    <div class="tvid"><img id="tImg" src="media/mold.jpg" alt="CoreField app screen for this trade"></div>
+    <div>
+      <h3><span class="ic" id="tIcon"></span><span id="tName">CoreField Mold</span></h3>
+      <p class="for" id="tFor"></p>
+      <ul class="blist" id="tList"></ul>
+      <div class="actions"><a class="btn" href="#signup" id="tCta">Get early access</a><a class="btn ghost" href="#top" id="tWatch">Watch the 26-second demo</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-h"><span class="pill">How it works</span><h2>From the job site to a <span class="grad">finished report</span></h2></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4>Snap and pin</h4><p>Take a photo and tap to pin readings right on it. Moisture, psi, volts, grade, whatever your trade measures.</p></div>
+    <div class="step"><div class="num">2</div><h4>Flag what matters</h4><p>Readings are color-coded against the right limits, and problems are flagged for you as you go.</p></div>
+    <div class="step"><div class="num">3</div><h4>Review and send</h4><p>AI drafts the report from your photos, readings and notes. You check it, sign it and send it.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-h"><span class="pill">Every CoreField app includes</span><h2>Everything the job needs, <span class="grad">in one app</span></h2></div>
+  <div class="feats" id="feats"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="pro">
+    <div class="shield"><svg width="54" height="54" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5l15 6v11c0 10-6.5 17-15 21-8.5-4-15-11-15-21V11z"/><path d="M17 24l5 5 9-10"/></svg></div>
+    <div><h3>Built by a field pro, <span class="grad">for field pros</span></h3>
+    <p>CoreField was built by a Florida-licensed mold assessor and remediator who works in construction. It's made for the way field work actually gets done: fast, on a phone, often with gloves on.</p></div>
+  </div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <div class="sec-h"><span class="pill">Launch pricing</span><h2>Simple plans. <span class="grad">Try it free.</span></h2><p>Every plan starts with a 14-day free trial. No credit card needed.</p></div>
+  <div class="prices">
+    <div class="plan"><h4>Solo</h4><div class="seats">1 user</div><div class="price">$39<span>/mo</span></div><ul><li>Everything for your trade</li><li>AI-drafted reports</li><li>Android &amp; web</li></ul><a class="btn ghost" href="#signup">Get early access</a></div>
+    <div class="plan pop"><span class="tagp">MOST POPULAR</span><h4>Team</h4><div class="seats">Up to 5 users</div><div class="price">$99<span>/mo</span></div><ul><li>Everything in Solo</li><li>Team accounts</li><li>One bill for the crew</li></ul><a class="btn" href="#signup">Get early access</a></div>
+    <div class="plan"><h4>Company</h4><div class="seats">Up to 15 users</div><div class="price">$199<span>/mo</span></div><ul><li>Everything in Team</li><li>Room for a full crew</li><li>One bill for the company</li></ul><a class="btn ghost" href="#signup">Get early access</a></div>
+  </div>
+  <p class="pnote">Pay yearly and get 2 months free.</p>
+</div></section>
+
+<section id="signup"><div class="wrap">
+  <div class="signup">
+    <div><span class="pill">Early access</span><h2 style="margin-top:14px">Be first in when <span class="grad">CoreField opens</span></h2><p>Tell us your trade and we'll email you as soon as your app is ready, with your 14-day free trial.</p></div>
+    <form class="full" data-form="main" novalidate>
+      <div class="row2">
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name"></div>
+        <div class="field"><label for="f-company">Company <span style="font-weight:500">(optional)</span></label><input id="f-company" name="company" autocomplete="organization" placeholder="Company"></div>
+      </div>
+      <div class="field"><label for="f-email">Work email</label><input id="f-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required></div>
+      <div class="field"><label for="f-trade">Your trade</label><select id="f-trade" name="trade"></select></div>
+      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn" type="submit">Get early access</button>
+      <div class="msg" data-msg="main"></div>
+    </form>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div>© 2026 LyfEscapes LLC · CoreField</div>
+  <div><a href="mailto:support@lyfescapes.net">Contact</a><a href="privacy.html">Privacy</a></div>
+</div></footer>
+
+<script>
+// Paste your Formspree form address here, e.g. "https://formspree.io/f/abc123".
+const FORM_ENDPOINT = "";
+const CONTACT_EMAIL = "support@lyfescapes.net";
+
+const T = {
+  mold:{label:'Mold',name:'CoreField Mold',for:'For mold assessors and remediators.',theme:['#8FE1FF','#4A9BFF','#2F7BFF','28,92,230','140,190,255','#FFFFFF'],glyph:'core',
+    list:['Assessor and remediator modes','Moisture readings pinned on photos, with a dry standard','Protocols for all 50 states','Crawlspace, HVAC and exterior sections','Sample tracking','Estimates built in']},
+  inspect:{label:'Inspect',name:'CoreField Inspect',for:'For home inspectors.',theme:['#9AF7EC','#35D3C3','#14AFA3','20,170,160','120,235,225','#032320'],glyph:'house',top:'#2BC4B6',bot:'#0A3B4B',
+    list:['Checklists for every system','Safety issues flagged as you go','Your state\'s standards built in','Crawlspace and attic sections','GFCI and water pressure tests','Fee schedule built in']},
+  build:{label:'Build',name:'CoreField Build',for:'For general contractors.',theme:['#FFD7A3','#FFA552','#F07F2A','235,115,35','255,190,130','#241000'],glyph:'hammer',top:'#F2994A',bot:'#6B2A0A',
+    list:['Permits and inspections','Schedule and budget','Site safety checklists','Progress photos with readings','Level and wood-moisture checks','Estimates and price book']},
+  plumb:{label:'Plumb',name:'CoreField Plumb',for:'For plumbers.',theme:['#BCC6FF','#8193FF','#5568F2','85,100,245','175,188,255','#FFFFFF'],glyph:'faucet',top:'#4F7DFF',bot:'#0B2E5C',
+    list:['Shutoff, PRV and backflow checks','Water heater checks','Sewer camera notes','Pressure, temperature, flow and gas tests','Code notes for your state','Estimates and price book']},
+  electric:{label:'Electric',name:'CoreField Electric',for:'For electricians.',theme:['#FFF2A6','#FFD84A','#F2B416','230,178,20','255,226,120','#221800'],glyph:'bolt',top:'#F2C94C',bot:'#6B4A0A',
+    list:['Panel and breaker checks','Flags Federal Pacific and Zinsco panels','Grounding, GFCI and AFCI tests','Voltage, insulation and hot-spot readings','NEC notes built in','Estimates and price book']},
+  landscape:{label:'Landscape',name:'CoreField Landscape',for:'For landscapers.',theme:['#BDF5C9','#6FD98A','#3DBA62','55,180,90','150,235,170','#04200E'],glyph:'leaf',top:'#56C271',bot:'#0B4A2A',
+    list:['Grade and drainage checks','Soil, turf and trees','811 call reminders','Grade and soil pH readings','Measurements and areas','Quotes and price book']},
+  irrigate:{label:'Irrigate',name:'CoreField Irrigate',for:'For irrigation pros.',theme:['#B3EEFF','#4FD0FF','#1BA8E8','30,165,235','140,220,255','#031722'],glyph:'spray',top:'#22B8F0',bot:'#0A3B5C',
+    list:['Controller and zones','Backflow and rain sensor checks','Heads, coverage and leak checks','Zone pressure tests','Watering rules for your area','Quotes and price book']},
+};
+const FEATS = [
+  ['camera','Readings on your photos','Tap a photo to pin a reading where you took it. Every pin lands in the report.'],
+  ['warning','Color-coded flags','Each reading is checked against your trade\'s limits and flagged when it\'s off.'],
+  ['spark','AI-drafted reports','A full report in your trade\'s format, written from your photos, readings and notes.'],
+  ['receipt','Estimates and price books','Build estimates on site with a price book for your trade.'],
+  ['book','Your state\'s standards','Pick your state and CoreField uses the standards that apply there.'],
+  ['devices','Android, web and teams','Use it on your phone or computer, with team accounts for your crew.'],
+];
+const ICONS48 = {
+  camera:'<rect x="5" y="14" width="38" height="26" rx="6"/><path d="M17 14l3-5h8l3 5"/><circle cx="24" cy="27" r="7"/>',
+  warning:'<path d="M24 6l19 34H5z"/><path d="M24 19v10M24 34v.5"/>',
+  spark:'<path d="M24 5c1.6 9 5 12.4 14 14-9 1.6-12.4 5-14 14-1.6-9-5-12.4-14-14 9-1.6 12.4-5 14-14z"/>',
+  receipt:'<path d="M12 6h24v36l-4-3-4 3-4-3-4 3-4-3-4 3z"/><path d="M28.5 16h-6a3 3 0 0 0 0 6h3a3 3 0 0 1 0 6h-6M24 13v3M24 28v3"/>',
+  book:'<path d="M6 9h12a6 6 0 0 1 6 6v26a4 4 0 0 0-4-4H6z"/><path d="M42 9H30a6 6 0 0 0-6 6v26a4 4 0 0 1 4-4h14z"/>',
+  devices:'<rect x="4" y="9" width="28" height="20" rx="3"/><path d="M11 36h14"/><rect x="30" y="16" width="14" height="24" rx="3"/>',
+  check:'<path d="M11 25l8 8 18-19"/>',
+};
+const line48 = (n, s, sw = 3.6) => `<svg width="${s}" height="${s}" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round">${ICONS48[n]}</svg>`;
+const GLYPHS = {
+  house:()=>'<path d="M24 6 L43 22 Q44 23.5 42 23.5 H38 V40 Q38 42 36 42 H29 V31 H19 V42 H12 Q10 42 10 40 V23.5 H6 Q4 23.5 5 22 Z"/>',
+  hammer:()=>'<g transform="translate(-3 2) rotate(38 24 26)"><rect x="19" y="14" width="7.5" height="31" rx="3.6"/><path d="M6 5 H16 Q17.5 5 17.5 6.5 V8.5 H28 C33 8.5 37.5 11 40.5 16.5 C36.5 15 32.5 14.6 28 15 V15.5 H17.5 V17.5 Q17.5 19 16 19 H6 Q4 19 4 17 V7 Q4 5 6 5 Z"/></g>',
+  faucet:()=>'<rect x="14" y="4" width="20" height="5.5" rx="2.75"/><rect x="21.5" y="8.5" width="5" height="6"/><rect x="6" y="13" width="30" height="8.5" rx="4.25"/><rect x="27.5" y="13" width="8.5" height="14" rx="4.25"/><path d="M31.75 30.5 C31.75 30.5 36.5 36 36.5 39.2 A4.75 4.75 0 0 1 27 39.2 C27 36 31.75 30.5 31.75 30.5 Z"/>',
+  bolt:()=>'<path d="M28.5 3 L8.5 27.5 H21.5 L18 45 L39.5 19 H26.5 Z"/>',
+  leaf:(b)=>`<path d="M7 41 C4 19 18 6 43 5 C44 30 30 43 7 41 Z"/><path d="M11 37 L32 16" stroke="${b}" stroke-width="2.8" stroke-linecap="round" fill="none"/>`,
+  spray:()=>'<rect x="19.5" y="30" width="9" height="11" rx="2.5"/><rect x="15" y="39" width="18" height="5" rx="2.5"/><g fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-dasharray="0.1 5.4"><path d="M24 26 C21 16 13 11 4 11"/><path d="M24 26 C27 16 35 11 44 11"/><path d="M24 25 V5"/></g>',
+};
+let ICN = 0;
+function appIcon(key, size) {
+  const t = T[key], id = 'i' + (ICN++);
+  const sheen = `<linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>`;
+  if (t.glyph === 'core') {
+    const c = Math.cos(Math.PI / 4) * 150, x1 = 256 + c, y1 = 256 - c, y2 = 256 + c;
+    return `<svg viewBox="0 0 512 512" width="${size}" height="${size}" style="display:block"><defs><linearGradient id="${id}g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3488FF"/><stop offset=".48" stop-color="#0D2A6E"/><stop offset="1" stop-color="#03050B"/></linearGradient><radialGradient id="${id}c"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".22" stop-color="#C9F1FF"/><stop offset=".55" stop-color="#4FB4FF" stop-opacity=".85"/><stop offset="1" stop-color="#2F80FF" stop-opacity="0"/></radialGradient>${sheen}</defs><rect width="512" height="512" rx="122" fill="url(#${id}g)"/><rect width="512" height="512" rx="122" fill="url(#${id}s)"/><circle cx="256" cy="256" r="122" fill="url(#${id}c)"/><circle cx="256" cy="256" r="34" fill="#fff"/><path d="M ${x1} ${y1} A 150 150 0 1 0 ${x1} ${y2}" fill="none" stroke="#fff" stroke-width="58" stroke-linecap="round"/></svg>`;
+  }
+  return `<svg viewBox="0 0 512 512" width="${size}" height="${size}" style="display:block"><defs><linearGradient id="${id}g" x1="0" y1="0" x2=".25" y2="1"><stop offset="0" stop-color="${t.top}"/><stop offset="1" stop-color="${t.bot}"/></linearGradient>${sheen}</defs><rect width="512" height="512" rx="118" fill="url(#${id}g)"/><rect width="512" height="512" rx="118" fill="url(#${id}s)"/><g transform="translate(256 256) scale(7.2) translate(-24 -24)" fill="#fff">${GLYPHS[t.glyph](t.bot)}</g></svg>`;
+}
+
+const params = new URLSearchParams(location.search);
+const fromHash = location.hash.slice(1);
+let cur = T[params.get('trade')] ? params.get('trade') : (T[fromHash] ? fromHash : 'mold');
+const $ = (id) => document.getElementById(id);
+
+// chips, features, trade select
+$('chips').innerHTML = Object.keys(T).map(k => `<button class="chip" data-t="${k}" aria-pressed="false"><span class="ic">${appIcon(k, 30)}</span>${T[k].label}</button>`).join('');
+$('feats').innerHTML = FEATS.map(([ic, h, p]) => `<div class="feat"><div class="fic">${line48(ic, 26)}</div><h4>${h}</h4><p>${p}</p></div>`).join('');
+$('f-trade').innerHTML = Object.keys(T).map(k => `<option value="${k}">${T[k].name.replace('CoreField ', '')}${k === 'mold' ? ' (assessment / remediation)' : ''}</option>`).join('') + '<option value="other">Other trade</option>';
+document.querySelectorAll('.chip').forEach(b => b.addEventListener('click', () => { setTrade(b.dataset.t, true); }));
+
+function setTrade(k, user) {
+  cur = k; const t = T[k], th = t.theme, rs = document.documentElement.style;
+  ['--a1', '--a2', '--a3', '--g', '--gl', '--on'].forEach((v, i) => rs.setProperty(v, th[i]));
+  document.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', b.dataset.t === k));
+  $('navIcon').innerHTML = appIcon(k, 36); $('tIcon').innerHTML = appIcon(k, 54);
+  $('navTrade').textContent = k === 'mold' ? '' : t.label;
+  $('tName').textContent = t.name; $('tFor').textContent = t.for;
+  $('tList').innerHTML = t.list.map(x => `<li>${line48('check', 20, 4.5)}${x}</li>`).join('');
+  $('tImg').src = `media/${k}.jpg`;
+  $('heroPill').textContent = k === 'mold' && !user && !params.get('trade') && fromHash !== 'mold' ? 'The field app for the trades' : `${t.name} · ${t.for.replace('For ', 'for ').replace('.', '')}`;
+  $('f-trade').value = k;
+  const v = $('heroVid');
+  if (!v.currentSrc.endsWith(`media/${k}.mp4`)) { v.poster = `media/${k}.jpg`; v.src = `media/${k}.mp4`; v.load(); v.play().catch(() => {}); }
+  if (user) { const u = new URL(location.href); u.searchParams.set('trade', k); history.replaceState(null, '', u); }
+}
+setTrade(cur, false);
+
+// sound toggle
+const SND_OFF = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>';
+const SND_ON = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
+$('snd').innerHTML = SND_OFF;
+$('snd').addEventListener('click', () => { const v = $('heroVid'); v.muted = !v.muted; if (!v.muted) { v.currentTime = 0; v.play(); } $('snd').innerHTML = v.muted ? SND_OFF : SND_ON; $('snd').setAttribute('aria-label', v.muted ? 'Turn sound on' : 'Turn sound off'); });
+$('tWatch').addEventListener('click', () => { const v = $('heroVid'); v.currentTime = 0; v.play().catch(() => {}); });
+
+// forms
+document.querySelectorAll('form[data-form]').forEach(f => f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const which = f.dataset.form, msg = document.querySelector(`[data-msg="${which}"]`);
+  const fd = new FormData(f);
+  const email = (fd.get('email') || '').trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.className = 'msg err'; msg.textContent = 'Please enter a valid email address.'; return; }
+  if (fd.get('_gotcha')) return;
+  const data = { email, name: fd.get('name') || '', company: fd.get('company') || '', trade: fd.get('trade') || cur,
+    source: params.get('utm_source') || '', campaign: params.get('utm_campaign') || '', page: location.href, _subject: `CoreField early access: ${T[fd.get('trade') || cur]?.name || 'Other trade'}` };
+  const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+  try {
+    if (FORM_ENDPOINT) {
+      const r = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(data) });
+      if (!r.ok) throw new Error('send failed');
+      msg.className = 'msg ok'; msg.textContent = "You're on the list. We'll email you when CoreField opens.";
+      f.reset(); $('f-trade').value = cur;
+    } else {
+      const body = `Please add me to the CoreField early access list.%0D%0A%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AName: ${encodeURIComponent(data.name)}%0D%0ACompany: ${encodeURIComponent(data.company)}%0D%0ATrade: ${encodeURIComponent(data.trade)}`;
+      location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(data._subject)}&body=${body}`;
+      msg.className = 'msg ok'; msg.textContent = 'Your email app should open. Just hit send.';
+    }
+  } catch (err) { msg.className = 'msg err'; msg.textContent = `Something went wrong. Email us at ${CONTACT_EMAIL} instead.`; }
+  btn.disabled = false;
+}));
+</script>
+</body>
+</html>
