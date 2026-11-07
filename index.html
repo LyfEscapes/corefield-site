@@ -6,7 +6,7 @@
 <title>CoreField · The field app for the trades</title>
 <meta name="description" content="Pin readings right on your photos and let AI draft the report. CoreField is the field app for mold pros, home inspectors, contractors, plumbers, electricians, landscapers and irrigation pros.">
 <meta property="og:title" content="CoreField · The field app for the trades">
-<meta property="og:description" content="Pin readings on your photos. AI drafts the report. You review and send. Get early access.">
+<meta property="og:description" content="Pin readings on your photos. AI drafts the report. You review and send. Get it on Google Play.">
 <meta property="og:image" content="https://corefield.lyfescapes.net/media/og.jpg">
 <meta property="og:url" content="https://corefield.lyfescapes.net/">
 <meta property="og:type" content="website">
@@ -26,7 +26,7 @@ a{color:inherit}
 .grad{background:linear-gradient(90deg,var(--a1),var(--a2) 60%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:800;border-radius:999px;padding:14px 24px;background:linear-gradient(90deg,var(--a3),var(--a2));color:var(--on);box-shadow:0 10px 30px rgba(var(--g),.45);text-decoration:none;transition:transform .15s,box-shadow .15s;white-space:nowrap}
 .btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(var(--g),.6)}
-.playrow{margin:14px 0 0}
+.playrow{margin:18px 0 6px}.gp{display:inline-block}.gp img{display:block;height:66px;width:auto}
 .btn.ghost{background:rgba(255,255,255,.07);color:var(--txt);box-shadow:none;border:1px solid var(--line)}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(var(--g),.16);border:1px solid rgba(var(--gl),.25);font-size:14px;font-weight:600;color:var(--a1)}
 
@@ -151,7 +151,7 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
 
 <nav class="nav"><div class="wrap">
   <a class="brand" href="#top"><span class="ic" id="navIcon"></span><span>Core<span class="grad">Field</span></span><small id="navTrade"></small></a>
-  <a class="btn" href="#signup">Get early access</a>
+  <a class="btn" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener">Get it on Google Play</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
@@ -159,14 +159,8 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
     <span class="pill" id="heroPill">The field app for the trades</span>
     <h1>Pin the readings.<br><span class="grad">AI writes the report.</span></h1>
     <p class="lead" id="heroLead">CoreField turns your photos, readings and notes into a finished report before you leave the job. You review it and send it.</p>
-    <form class="inline-form" data-form="hero" novalidate>
-      <input type="email" name="email" placeholder="Your work email" autocomplete="email" required aria-label="Email">
-      <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" type="submit">Get early access</button>
-    </form>
-    <div class="msg" data-msg="hero"></div>
-    <p class="playrow"><a class="btn ghost" id="playBtn" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener">Or get it now on Google Play</a></p>
-    <p class="fine"><b>14-day free trial</b> at launch · No credit card · Android &amp; web</p>
+    <p class="playrow"><a class="gp" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener" aria-label="Get it on Google Play"><img src="media/google-play-badge.png" alt="Get it on Google Play" height="66"></a></p>
+    <p class="fine"><b>14-day free trial</b> · No credit card · Android &amp; web · iPhone coming soon</p>
   </div>
   <div class="vidcard">
     <video id="heroVid" autoplay muted loop playsinline preload="metadata" poster="media/mold.jpg"><source src="media/mold.mp4" type="video/mp4"></video>
@@ -183,7 +177,7 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
       <h3><span class="ic" id="tIcon"></span><span id="tName">CoreField Mold</span></h3>
       <p class="for" id="tFor"></p>
       <ul class="blist" id="tList"></ul>
-      <div class="actions"><a class="btn" href="#signup" id="tCta">Get early access</a><a class="btn ghost" href="#top" id="tWatch">Watch the 26-second demo</a></div>
+      <div class="actions"><a class="btn" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener" id="tCta">Get it on Google Play</a><a class="btn ghost" href="#top" id="tWatch">Watch the 26-second demo</a></div>
     </div>
   </div>
 </div></section>
@@ -213,16 +207,16 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
 <section id="pricing"><div class="wrap">
   <div class="sec-h"><span class="pill">Launch pricing</span><h2>Simple plans. <span class="grad">Try it free.</span></h2><p>Every plan starts with a 14-day free trial. No credit card needed.</p></div>
   <div class="prices">
-    <div class="plan"><h4>Solo</h4><div class="seats">1 user</div><div class="price">$39<span>/mo</span></div><ul><li>Everything for your trade</li><li>AI-drafted reports</li><li>Android &amp; web</li></ul><a class="btn ghost" href="#signup">Get early access</a></div>
-    <div class="plan pop"><span class="tagp">MOST POPULAR</span><h4>Team</h4><div class="seats">Up to 5 users</div><div class="price">$99<span>/mo</span></div><ul><li>Everything in Solo</li><li>Team accounts</li><li>One bill for the crew</li></ul><a class="btn" href="#signup">Get early access</a></div>
-    <div class="plan"><h4>Company</h4><div class="seats">Up to 15 users</div><div class="price">$199<span>/mo</span></div><ul><li>Everything in Team</li><li>Room for a full crew</li><li>One bill for the company</li></ul><a class="btn ghost" href="#signup">Get early access</a></div>
+    <div class="plan"><h4>Solo</h4><div class="seats">1 user</div><div class="price">$39<span>/mo</span></div><ul><li>Everything for your trade</li><li>AI-drafted reports</li><li>Android &amp; web</li></ul><a class="btn ghost" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener">Get it on Google Play</a></div>
+    <div class="plan pop"><span class="tagp">MOST POPULAR</span><h4>Team</h4><div class="seats">Up to 5 users</div><div class="price">$99<span>/mo</span></div><ul><li>Everything in Solo</li><li>Team accounts</li><li>One bill for the crew</li></ul><a class="btn" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener">Get it on Google Play</a></div>
+    <div class="plan"><h4>Company</h4><div class="seats">Up to 15 users</div><div class="price">$199<span>/mo</span></div><ul><li>Everything in Team</li><li>Room for a full crew</li><li>One bill for the company</li></ul><a class="btn ghost" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener">Get it on Google Play</a></div>
   </div>
   <p class="pnote">Pay yearly and get 2 months free.</p>
 </div></section>
 
 <section id="signup"><div class="wrap">
   <div class="signup">
-    <div><span class="pill">Early access</span><h2 style="margin-top:14px">Be first in when <span class="grad">CoreField opens</span></h2><p>Tell us your trade and we'll email you as soon as your app is ready, with your 14-day free trial.</p></div>
+    <div><span class="pill">iPhone</span><h2 style="margin-top:14px">On iPhone? <span class="grad">Get notified</span></h2><p>The iPhone app is on its way. Leave your email and trade and we'll tell you the day it's in the App Store.</p></div>
     <form class="full" data-form="main" novalidate>
       <div class="row2">
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" placeholder="Your name"></div>
@@ -231,7 +225,7 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
       <div class="field"><label for="f-email">Work email</label><input id="f-email" type="email" name="email" autocomplete="email" placeholder="you@company.com" required></div>
       <div class="field"><label for="f-trade">Your trade</label><select id="f-trade" name="trade"></select></div>
       <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn" type="submit">Get early access</button>
+      <button class="btn" type="submit">Notify me</button>
       <div class="msg" data-msg="main"></div>
     </form>
   </div>
@@ -344,7 +338,7 @@ document.querySelectorAll('form[data-form]').forEach(f => f.addEventListener('su
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg.className = 'msg err'; msg.textContent = 'Please enter a valid email address.'; return; }
   if (fd.get('_gotcha')) return;
   const data = { email, name: fd.get('name') || '', company: fd.get('company') || '', trade: fd.get('trade') || cur,
-    source: params.get('utm_source') || '', campaign: params.get('utm_campaign') || '', page: location.href, _subject: `CoreField early access: ${T[fd.get('trade') || cur]?.name || 'Other trade'}` };
+    source: params.get('utm_source') || '', campaign: params.get('utm_campaign') || '', page: location.href, _subject: `CoreField iPhone notify: ${T[fd.get('trade') || cur]?.name || 'Other trade'}` };
   const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
   try {
     if (FORM_ENDPOINT) {
@@ -353,7 +347,7 @@ document.querySelectorAll('form[data-form]').forEach(f => f.addEventListener('su
       msg.className = 'msg ok'; msg.textContent = "You're on the list. We'll email you when CoreField opens.";
       f.reset(); $('f-trade').value = cur;
     } else {
-      const body = `Please add me to the CoreField early access list.%0D%0A%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AName: ${encodeURIComponent(data.name)}%0D%0ACompany: ${encodeURIComponent(data.company)}%0D%0ATrade: ${encodeURIComponent(data.trade)}`;
+      const body = `Please notify me when CoreField is on iPhone.%0D%0A%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AName: ${encodeURIComponent(data.name)}%0D%0ACompany: ${encodeURIComponent(data.company)}%0D%0ATrade: ${encodeURIComponent(data.trade)}`;
       location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(data._subject)}&body=${body}`;
       msg.className = 'msg ok'; msg.textContent = 'Your email app should open. Just hit send.';
     }
