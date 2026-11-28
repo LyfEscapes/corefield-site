@@ -27,7 +27,7 @@ a{color:inherit}
 .grad{background:linear-gradient(90deg,var(--a1),var(--a2) 60%,var(--a3));-webkit-background-clip:text;background-clip:text;color:transparent}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:inherit;font-weight:800;border-radius:999px;padding:14px 24px;background:linear-gradient(90deg,var(--a3),var(--a2));color:var(--on);box-shadow:0 10px 30px rgba(var(--g),.45);text-decoration:none;transition:transform .15s,box-shadow .15s;white-space:nowrap}
 .btn:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(var(--g),.6)}
-.playrow{margin:18px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.tryweb{height:48px;display:inline-flex;align-items:center}.gp{display:inline-block}.gp img{display:block;height:66px;width:auto}
+.playrow{margin:18px 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:14px}.tryweb{height:48px;display:inline-flex;align-items:center}.as,.gp{display:inline-block}.as img{display:block;height:44px;width:auto}.gp img{display:block;height:66px;width:auto}
 .btn.ghost{background:rgba(255,255,255,.07);color:var(--txt);box-shadow:none;border:1px solid var(--line)}
 .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(var(--g),.16);border:1px solid rgba(var(--gl),.25);font-size:14px;font-weight:600;color:var(--a1)}
 
@@ -160,7 +160,7 @@ footer a{color:var(--txt);text-decoration:none;margin-left:18px}
     <span class="pill" id="heroPill">The field app for the trades</span>
     <h1>Pin the readings.<br><span class="grad">AI writes the report.</span></h1>
     <p class="lead" id="heroLead">CoreField turns your photos, readings and notes into a finished report before you leave the job. You review it and send it.</p>
-    <p class="playrow"><a class="gp" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener" aria-label="Get it on Google Play"><img src="media/google-play-badge.png" alt="Get it on Google Play" height="66"></a><a class="btn tryweb" href="https://apps.apple.com/app/id6829302760" rel="noopener">Download on the App Store</a><a class="btn ghost tryweb" id="tryWeb" href="https://corefield.onrender.com/?demo=1&amp;utm_source=corefield_site&amp;utm_medium=web" rel="noopener">Try it in your browser</a></p>
+    <p class="playrow"><a class="as" href="https://apps.apple.com/app/id6829302760" rel="noopener" aria-label="Download on the App Store"><img src="media/app-store-badge.svg" alt="Download on the App Store" width="132" height="44"></a><a class="gp" href="https://play.google.com/store/apps/details?id=net.coreecs.corefield&amp;referrer=utm_source%3Dcorefield_site%26utm_medium%3Dweb" rel="noopener" aria-label="Get it on Google Play"><img src="media/google-play-badge.png" alt="Get it on Google Play" height="66"></a><a class="btn ghost tryweb" id="tryWeb" href="https://corefield.onrender.com/?demo=1&amp;utm_source=corefield_site&amp;utm_medium=web" rel="noopener">Try it in your browser</a></p>
     <p class="fine"><b>14-day free trial</b> · No credit card · No account needed to look around · iPhone, iPad, Android &amp; web</p>
   </div>
   <div class="vidcard">
@@ -329,7 +329,6 @@ setTrade(cur, false);
 // iPhone and iPad visitors get App Store links on the buttons
 if (/iPad|iPhone|iPod/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1)) {
   document.querySelectorAll('a.btn[href*="play.google.com"]').forEach(a => { a.href = 'https://apps.apple.com/app/id6829302760'; a.textContent = 'Download on the App Store'; });
-  const gp = document.querySelector('a.gp'); if (gp) gp.remove();
 }
 
 // sound toggle
